@@ -29,6 +29,8 @@ namespace CreateGmailAccount
             string passwordBox = "//*[@id=\"passwd\"]/div[1]/div/div[1]/input";
             string confirmpasswordBox = "#confirm-passwd > div.aCsJod.oJeWuf > div > div.Xb9hP > input";
             string passwords = "ch3ck0utL1n3";
+            string emailName = "sfgyterg5125612" + DateTime.Now.ToShortDateString();
+            string emailNameFixed = emailName.Replace('/', '.');
             string nxtBtn = "//*[@id=\"accountDetailsNext\"]";
 
             // Creating the account            
@@ -54,7 +56,7 @@ namespace CreateGmailAccount
             lastName.SendKeys("Man");
 
             userName = driver.FindElement(By.XPath(userNameBox));
-            userName.SendKeys("sfgyterg5125612");
+            userName.SendKeys(emailNameFixed);
             
             pssWrd = driver.FindElement(By.XPath(passwordBox));
             pssWrd.SendKeys(passwords);
